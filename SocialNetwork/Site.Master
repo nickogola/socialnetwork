@@ -16,9 +16,10 @@
     </asp:PlaceHolder>
     <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-
+    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Arvo:700" rel="stylesheet" type="text/css" />
+	
 </head>
-<body>
+<body class="homepage">
     <form runat="server">
         <asp:ScriptManager runat="server">
             <Scripts>
@@ -92,6 +93,7 @@
                     </div>
                 </div>
             </div>
+            
         </header>
         <div class="container">
 

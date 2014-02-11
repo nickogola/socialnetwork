@@ -20,7 +20,12 @@ namespace SocialNetwork
                             "~/Scripts/WebForms/GridView.js",
                             "~/Scripts/WebForms/DetailsView.js",
                             "~/Scripts/WebForms/TreeView.js",
-                            "~/Scripts/WebForms/WebParts.js"));
+                            "~/Scripts/config.js",
+                            "~/Scripts/html5shiv.js",
+                            "~/Scripts/jquery.dropotron.min.js",
+                            "~/Scripts/jquery.min.js",
+                            "~/Scripts/skel-panels.min.js",
+                            "~/Scripts/skel.min.js"));
 
             // Order is very important for these files to work, they have explicit dependencies
             bundles.Add(new ScriptBundle("~/bundles/MsAjaxJs").Include(
@@ -28,6 +33,11 @@ namespace SocialNetwork
                     "~/Scripts/WebForms/MsAjax/MicrosoftAjaxApplicationServices.js",
                     "~/Scripts/WebForms/MsAjax/MicrosoftAjaxTimer.js",
                     "~/Scripts/WebForms/MsAjax/MicrosoftAjaxWebForms.js"));
+
+            bundles.Add(new StyleBundle("~/css/css").Include(
+                    "~/css/skel-noscript.css",
+                    "~/css/style.css",
+                    "~/Content/css/style-desktop.css"));
 
             // Use the Development version of Modernizr to develop with and learn from. Then, when you’re
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need

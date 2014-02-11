@@ -303,7 +303,7 @@ namespace SocialNetwork.Users
 
         protected void BackToHomeLinkButton_OnClick(object sender, EventArgs e)
         {
-            Response.Redirect("~/");
+            Response.Redirect("~/Default.aspx");
         }
 
         protected void BannUserLinkButton_OnClick(object sender, EventArgs e)

@@ -47,10 +47,12 @@ p {
 }
 
     .panel h2 {
-        background: #EEE;
-        font-size: 20px;
-        padding-left: 10px;
-        border-radius: 4px;
+     font-size: 20px;
+     
+     color: #fff;
+     background-color: #f90;
+     padding: 8px;
+     font-weight: 600;
     }
 
     .panel label span {

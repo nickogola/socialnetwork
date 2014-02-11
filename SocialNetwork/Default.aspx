@@ -6,32 +6,40 @@
     EnableEventValidation="false" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <h1>Welcome to Jadeite Social Network</h1>
+    
+    <!-- Features Wrapper -->
+			<div id="features-wrapper">
 
-    <asp:Panel runat="server" ID="PanelTime" CssClass="panel align-center">
-        <h2>The social network that has the force with it.</h2>
-        <asp:UpdatePanel runat='server' ID='UpdatePanelTime' UpdateMode="Conditional">
-            <Triggers>
-                <asp:AsyncPostBackTrigger ControlID="TimerTimeRefresh" EventName="Tick" />
-            </Triggers>
-            <ContentTemplate>
-                <h5>Total Users:
-                    <asp:Label ID="LabelTotalUsers" runat="server"></asp:Label></h5>
-                <h5>Total Posts:
-                    <asp:Label ID="LabelTotalPosts" runat="server"></asp:Label></h5>
-                <h5>Total Comments:
-                    <asp:Label ID="LabelTotalComments" runat="server"></asp:Label></h5>
-            </ContentTemplate>
-        </asp:UpdatePanel>
-    </asp:Panel>
-
-    <asp:Panel runat="server" ID="PanelGridView" CssClass="panel align-center">
+				<!-- Features -->
+					<section id="features" class="container">
+						<header>
+                            <h2>Social Network</h2>
+						</header>
+                        <div class="row">
+                                <!-- Feature -->
+                               <asp:Panel runat="server" ID="PanelTime" CssClass="panel align-center"> 
+                                <asp:UpdatePanel runat='server' ID='UpdatePanelTime' UpdateMode="Conditional" >
+                                <%--    <Triggers>
+                                        <asp:AsyncPostBackTrigger ControlID="TimerTimeRefresh" EventName="Tick" />
+                                    </Triggers>--%>
+                                    <ContentTemplate>
+                                        <h5>Total Users:
+                                            <asp:Label ID="LabelTotalUsers" runat="server"></asp:Label></h5>
+                                        <h5>Total Posts:
+                                            <asp:Label ID="LabelTotalPosts" runat="server"></asp:Label></h5>
+                                        <h5>Total Comments:
+                                            <asp:Label ID="LabelTotalComments" runat="server"></asp:Label></h5>
+                                    </ContentTemplate>
+                                </asp:UpdatePanel>
+                                   </asp:Panel>
+                            
+                             <asp:Panel runat="server" ID="PanelGridView" CssClass="panel align-center">
         <asp:UpdatePanel runat='server' ID='UpdatePanelGridView' UpdateMode="Conditional">
             <ContentTemplate>
-                <asp:Timer ID="TimerTimeRefresh" runat="Server" Interval="30000" />
+                <%--<asp:Timer ID="TimerTimeRefresh" runat="Server" Interval="60000" />--%>
                 <h2>Recent Activity:</h2>
                 <asp:GridView ID="GridViewUsers" runat="server" AutoGenerateColumns="False"
-                    AllowSorting="true"
+                    AllowSorting="true" Width="800px" GridLines="Vertical" CellPadding="5"
                     AllowPaging="True" DataKeyNames="ID" PageSize="3"
                     OnRowDataBound="GridViewUsers_RowDataBound"
                     OnSelectedIndexChanged="OnSelectedIndexChanged"
@@ -40,7 +48,7 @@
                     <Columns>
                         <asp:TemplateField HeaderText="Avatar">
                             <ItemTemplate>
-                                <asp:Image ImageUrl='<%# GetImageUrl(Eval("AvatarImage")) %>' runat="server"
+                                <asp:Image ID="Image1" ImageUrl='<%# GetImageUrl(Eval("AvatarImage")) %>' runat="server"
                                     Width="40px" Height="40px" />
                             </ItemTemplate>
                         </asp:TemplateField>
@@ -61,6 +69,13 @@
             </ContentTemplate>
         </asp:UpdatePanel>
     </asp:Panel>
+                        </div>
+					
+					</section>
+			
+			</div>
+		
+	
 
     <asp:Panel runat="server" ID="PanelSearchArea" CssClass="panel align-center">
         <asp:UpdatePanel runat='server' ID='UpdatePanelSearchArea' UpdateMode="Conditional">
